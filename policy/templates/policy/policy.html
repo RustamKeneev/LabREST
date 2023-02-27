@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+{#    <link rel="stylesheet" href="../../static/policy/css/policy.css">#}
+    <link type="text/css" rel="stylesheet" href="{% static 'policy/css/policy.css' %}">
+</head>
+<body>
+    <h1>Конфициадальность</h1>
+    {% for policy in posts %}
+        {% autoescape off %}
+            <p>{{ policy.description | linebreaks }}</p>
+        {% endautoescape %}
+    {% endfor %}}
+</body>
+</html>
