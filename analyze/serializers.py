@@ -16,11 +16,11 @@ class AnalyzeSerializer(serializers.ModelSerializer):
 
 
 class CategorySerializer(serializers.ModelSerializer):
-    children = AnalyzeSerializer(many=True, read_only=True)
+    category = AnalyzeSerializer(many=True, read_only=True)
 
     class Meta:
         model = Category
-        fields = ['id', 'title', 'date', 'children', ]
+        fields = ['id', 'title', 'date', 'category', ]
 
     # def get_fields(self):
     #     fields = super().get_fields()
